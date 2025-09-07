@@ -1,0 +1,9 @@
+=== TRAIN RESULTS ===
+Accuracy : 0.9757
+F1-score : 0.9857
+ROC AUC  : 0.9954
+
+=== TEST RESULTS ===
+Accuracy : 0.8160
+F1-score : 0.8963
+ROC AUC  : 0.6265

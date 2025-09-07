@@ -1,0 +1,11 @@
+jupyter
+openpyxl
+pandas
+scikit-learn
+matplotlib
+toml
+pprintpp
+pydantic
+uvicorn[standard]
+fastapi[standard]
+openai

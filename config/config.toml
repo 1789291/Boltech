@@ -1,0 +1,25 @@
+[path]
+    data_path =  "data/claim_use_case_dataset.xlsx"
+    model_save_path = "artifact/model/best_model.pkl"
+    
+[data]
+    test_size = 0.2
+
+[random_state]
+    seed = 42
+
+[columns]
+    drop = ["make","frontOrBackCamera","relationship","deviceCost","smashed","productCode" ,"productName","model" ,"other","issueDesc"]
+    binary = ["coverage","frontCamera","connection","turnOnOff","mic","touchScreen","backCamera","buttons","audio","charging"]
+    category = ["country","claimType","policyStatus","deviceType","channel","retailerName","productDesc"]
+    datetime = ["purchaseDate","policyStartDate", "policyEndDate"]
+    continuous = ["excessFee","rrp","oldBalanceRRP","balanceRRP"]
+    target = ["status"]
+
+[target]
+    keys = ["Completed", "Declined"]
+    values = [1, 0]
+
+
+
+    
