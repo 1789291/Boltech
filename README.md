@@ -168,12 +168,12 @@ curl -X POST http://127.0.0.1:8000/batch-predict   -H "Content-Type: application
 
 ### 3) `POST /explain` — GenAI rationale for a decision
 
-- **Body**: a **single** claim **including** `"decision": "ACCEPT"` or `"DECLINE"`
+- **Body**: a **single** claim **including** `"decision": "COMPLETED"` or `"DECLINED"`
 - **Requires**: `OPENAI_API_KEY`
 - **Response** (shape):
 ```json
 {
-  "decision": "ACCEPT",
+  "decision": "COMPLETED",
   "summary": "…",
   "key_factors": [
     {"field": "coverage", "value": "ADLD", "impact": "+", "rationale": "matches claimType"},
