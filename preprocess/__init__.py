@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 import sys
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
@@ -10,6 +11,11 @@ from config.settings import Settings
 
 
 settings = Settings()
+
+
+PROJECT_ROOT = Path(__file__).resolve().parents[1]   # → Assessment/
+ENCODERS_DIR = PROJECT_ROOT / "artifacts" / "encoders"
+ENCODERS_DIR.mkdir(parents=True, exist_ok=True)
 
 
 class Preprocessor:
@@ -66,7 +72,7 @@ class Preprocessor:
             self.df[col] = le.fit_transform(self.df[col])
             encoders[col] = le
 
-        with open("../artifacts/encoders/binary_encoders.pkl", "wb") as f:
+        with open(f"{ENCODERS_DIR}/binary_encoders.pkl", "wb") as f:
             pickle.dump(encoders, f)
 
         return self.df
@@ -87,7 +93,7 @@ class Preprocessor:
             [self.df.drop(columns=settings.category_cols), enc_df], axis=1
         )
 
-        with open("../artifacts/encoders/ohe_encoder.pkl", "wb") as f:
+        with open(f"{ENCODERS_DIR}/ohe_encoder.pkl", "wb") as f:
             pickle.dump(ohe, f)
 
         return self.df

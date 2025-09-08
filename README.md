@@ -32,7 +32,7 @@ ASSESSMENT/
 ├─ inference/
 │  └─ __init__.py            # Infer: drop → fillna → encode → OHE → datetime → align
 ├─ models/
-│  └─ __init__.py            # Pydantic models (ClaimDataRequest)
+│  └─ __init__.py            # Pydantic models (MLClaimDataRequest & LLMClaimDataRequest)
 ├─ preprocess/
 │  └─ __init__.py
 ├─ train/
