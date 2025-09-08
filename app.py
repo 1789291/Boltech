@@ -96,7 +96,7 @@ def batch_predict(features: List[MLClaimDataRequest]) -> dict:
     return {"predictions": list(preds)}
 
 
-@app.post("/llm")
+@app.post("/explian")
 def llm(record: LLMClaimDataRequest):
     system_prompt, user_prompt = build_chatgpt_prompts(record=record.model_dump())
     client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
